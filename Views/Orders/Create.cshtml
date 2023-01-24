@@ -1,0 +1,58 @@
+﻿@model VerstaTest.Models.Order
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CityFrom" class="control-label"></label>
+                <input asp-for="CityFrom" class="form-control" />
+                <span asp-validation-for="CityFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CityTo" class="control-label"></label>
+                <input asp-for="CityTo" class="form-control" />
+                <span asp-validation-for="CityTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdressFrom" class="control-label"></label>
+                <input asp-for="AdressFrom" class="form-control" />
+                <span asp-validation-for="AdressFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdressTo" class="control-label"></label>
+                <input asp-for="AdressTo" class="form-control" />
+                <span asp-validation-for="AdressTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackageWeight" class="control-label"></label>
+                <input asp-for="PackageWeight" class="form-control" />
+                <span asp-validation-for="PackageWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PickUpDate" class="control-label"></label>
+                <input asp-for="PickUpDate" class="form-control" invalid/>
+                <span asp-validation-for="PickUpDate" id="dateError" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
